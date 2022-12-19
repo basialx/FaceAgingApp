@@ -9,23 +9,28 @@
       href="https://fonts.googleapis.com/css2?family=Aboreto&family=Josefin+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../static/style.css">
   </head>
   <body>
     <h1>Face Aging App</h1>
     <div class="container">
       <form action="." method="post" enctype="multipart/form-data">
         {% csrf_token %} {{form.as_p}}
-
-        <button type="submit" class="btn btn-lg btn-success">Upload</button>
+        <button
+          type="submit"
+          class="btn btn-lg btn-success"
+        >
+          Upload
+        </button>
       </form>
 
       {% if obj %}
-      <h3>Succesfully uploaded : {{img_obj.caption}}</h3>
+      <h3>Succesfully uploaded :{{img_obj.caption}}</h3>
       <img src="{{ obj.image.url}}" alt="image" class="img-thumbnail" />
-      {% endif %}
+       {% endif %}
       <hr />
 
-      {% for x in img %} {% if forloop.first %}
+       {% for x in img %} {% if forloop.first %}
       <div class="row">
         {% endif %}
         <div class="col-lg-4 col-md-4 col-12">
