@@ -17,14 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
-from Image.views import success, display_images
+from Image.views import images
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Image.urls")),
-    path('success', success, name='success'),
-    path('hotel_images', display_images, name = 'hotel_images')
+    path('images/', include("Image.urls")),
 ]
 
 if settings.DEBUG:

@@ -13,33 +13,13 @@ def index(request):
             #
         obj = form.instance
         #return render(request, "index.html", {"obj": obj})
-        return redirect('success')
+        return redirect('images')
     else:
         form = ImageForm()
-    img = Image.objects.all()
-    return render(request, "index.html", {"img": img, "form": form})
+    return render(request, "index.html", {"form": form})
 
-
-""" if request.method == "POST":
-        form = ImageForm(data=request.POST, files=request.FILES)
-        if form.is_valid():
-            form.save()
-            # return redirect('success')
-        obj = form.instance
-        return render(request, "index.html", {"obj": obj})
-    else:
-        form = ImageForm()
-    img = Image.objects.all()
-    return render(request, "index.html", {"img": img, "form": form})
-"""
-def success(request):
-    return HttpResponse('successfully uploaded')
-
-# Python program to view
-# for displaying images
-
-def display_images(request):
+def images(request):
 	if request.method == 'GET':
 		image = Image.objects.all()
-		return render((request, 'images.html',
-					{'images': image}))
+		return render(request, 'images.html',{'image': image})
+
