@@ -23,3 +23,7 @@ def images(request):
 		image = Image.objects.all()
 		return render(request, 'images.html',{'image': image})
 
+def delete_image(request, id):
+    image = Image.objects.get(pk=id)
+    image.delete()
+    return redirect('images')

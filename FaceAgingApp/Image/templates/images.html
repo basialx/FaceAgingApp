@@ -33,7 +33,15 @@
               alt="..."
             />
             <h2 class="text-center">{{x.caption}}</h2>
-          </div>
+          </div><button
+          type="submit"
+          class="btn btn-outline-danger btn-sm"
+        >
+        <a href="{%  url 'delete' x.id %}"
+
+        >
+          Delete image
+        </a></button>
         </div>
         {% if forloop.counter|divisibleby:3 %}
       </div>

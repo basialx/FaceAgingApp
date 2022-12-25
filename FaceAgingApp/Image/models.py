@@ -6,7 +6,3 @@ class Image(models.Model):
     image=models.ImageField(null=True, blank=True, upload_to="image/%y") #
     def __str__(self):
         return self.caption
-
-def upload_loaction(instance,filename):
-    location = str(instance.name)
-    return "Image/%s/%s" %(location,filename)
