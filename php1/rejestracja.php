@@ -85,7 +85,7 @@
   <meta charset="tf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <title>Rejstracja - nowe konto</title>
-  
+  <link href="style.css" type="text/css" rel="stylesheet"/>
   <style>
    .error
    {
@@ -96,7 +96,7 @@
   </style>
 </head>
 <body>
-
+<br/><br/>
   <form method="post">
   
     Nickname: <br/><input type="text" name="nick"/><br/>
