@@ -22,10 +22,7 @@
    $haslo = $_POST['haslo'];
    
    $login=htmlentities($login, ENT_QUOTES, "UTF-8");
-   //$haslo=htmlentities($haslo, ENT_QUOTES, "UTF-8");
-  
-   //AND pass='%s'
-   //,mysqli_real_escape_string($polaczenie,$haslo)
+   
    if($rezultat=@$polaczenie->query(sprintf("SELECT * FROM uzytkownicy WHERE user='%s'", mysqli_real_escape_string($polaczenie,$login))))
    {
 	   $ilu_userow=$rezultat->num_rows;
