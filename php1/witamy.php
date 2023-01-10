@@ -2,7 +2,7 @@
 
  session_start();
  
- if(isset($_SESSION['udanarejestracja']))
+ if(!isset($_SESSION['udanarejestracja']))
  {
 	 header('Location: index.php');
 	 exit();
@@ -27,9 +27,10 @@
   <meta charset="tf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <title>strona logowania</title>
+  <link href="style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-Dziękujemy za rejstracje. Prosze zalogować się na konto. <br/><br/>
+Dziękujemy za rejestracje. Prosze zalogować się na konto. <br/><br/>
 <a href="index.php">Zaloguj się na swoje konto.</a>
 <br/><br/>
 
