@@ -1,0 +1,11 @@
+.idea
+__MACOSX
+lightning_logs
+checkpoints
+/test_images
+/.venv
+/mygraph.png
+/model
+/book
+/FaceAgingApp/engine/pretrained_model
+.DS_Store
