@@ -12,8 +12,9 @@ session_start();
 <body>
  <br/><br/>
 <?php
-echo "<p>Galeria uzytkownika ".$_SESSION['user'].' [<a href="aplikacja.php">Powrót do menu</a>]</p?>';
+echo "Galeria uzytkownika ".$_SESSION['user']." ";
 ?>
+<a href ="aplikacja.php"> Powrót do menu </a>
 <br/><br/>
 <br/><br/>
 <?php
