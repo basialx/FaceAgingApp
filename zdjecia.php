@@ -15,7 +15,7 @@ session_start();
 echo "<p>Galeria uzytkownika ".$_SESSION['user'].' [<a href="aplikacja.php">Powrót do menu</a>]</p?>';
 ?>
 <br/><br/>
-
+<br/><br/>
 <?php
 $directory="./galeria";
 $dir=opendir($directory);
@@ -25,6 +25,7 @@ while($file_name=readdir($dir))
          if(($file_name!=".")&&($file_name!=".."))
         {
 	 echo '<img src="galeria/'.$file_name.'">';
+	 echo "<br></br>";
         }
     }
  

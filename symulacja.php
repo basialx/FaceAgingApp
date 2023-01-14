@@ -22,7 +22,7 @@
 ?>
  <br/><br/>
  <a href ="aplikacja.php"> Wykonaj ponownie </a>
- <br/><br/>
+ <br/>
  <a href ="zdjecia.php"> Zobacz galerie </a>
  
 </body>
