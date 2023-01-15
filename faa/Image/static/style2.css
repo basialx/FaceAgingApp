@@ -11,10 +11,17 @@ body {
 .image {
   margin-top: 15px;
   padding-top: 20px;
-  background-color: #212121;
+  background-color: #fcfcfc;
   position: relative;
   text-align: center;
-  font-size: 14px;
+  font-size: 11px;
+  place-items: center;
+  width: 1000px;
+  height: 1000px;
+}
+img
+{
+  position: relative;
 }
 h1 {
   text-align: center;

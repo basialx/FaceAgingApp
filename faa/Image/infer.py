@@ -7,21 +7,15 @@ import matplotlib.pyplot as plt
 import torch
 from PIL import Image
 from torchvision import transforms
-
 from .gan_module import Generator
-parser = ArgumentParser()
-parser.add_argument(
-    '--image_dir', default='/Applications/XAMPP/xamppfiles/htdocs/php1', help='The image directory')
 
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 @torch.no_grad()
 
 def make_image_older(image, n): # gdzies do 35 linii
-    args = parser.parse_args()
-    image_paths = [os.path.join(args.image_dir, x) for x in os.listdir(args.image_dir) if
-                   x.endswith('.png') or x.endswith('.jpg')]
     model = Generator(ngf=32, n_residual_blocks=9)
-    ckpt = torch.load('pretrained_model/state_dict.pth', map_location='cpu')
+    ckpt = torch.load('C:/Users/patkr/faa/Image/state_dict.pth', map_location='cpu')
     model.load_state_dict(ckpt)
     model.eval()
     transTensor = transforms.Compose([
@@ -29,7 +23,8 @@ def make_image_older(image, n): # gdzies do 35 linii
         transforms.ToTensor(),
         transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
     ])
-    img = image.convert('RGB')
+    i = Image.open(image)
+    img = i.convert('RGB')
     img = transTensor(img).unsqueeze(0)
     aged_face = model(img)
     for i in range(n-1):
@@ -38,9 +33,9 @@ def make_image_older(image, n): # gdzies do 35 linii
 
     return aged_face
 
-def display_image(image):
+def display_image(image, path):
     plt.imshow(image)
-    plt.savefig("/Applications/XAMPP/xamppfiles/htdocs/php1/galeria_po/zdj.png")
+    plt.savefig(path)
 
 
 if __name__ == '__main__':
