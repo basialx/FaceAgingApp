@@ -1,3 +1,6 @@
+import glob
+import os
+
 from django.shortcuts import render, redirect
 from .form import ImageForm
 from .models import Image
@@ -24,12 +27,14 @@ def index(request):
     return render(request, "index.html", {"form": form})
 
 
-def images(request, id):
+def images(request):
     if request.method == 'GET':
-        im = Image.objects.get(pk=id)
-        make_image_older(im)
+        #list_of_files = glob.glob('C:/Users/patkr/faa/media/*.jpg')  # * means all if need specific format then *.csv
+        latest_file = Image.objects.last()
+        new = make_image_older(latest_file, 1)
+        new.save()
         image = Image.objects.all()
-        return render(request, 'images.html', {'image': image})
+        return render(request, 'image.html', {'image': image, 'lf':new})
 
 
 def delete_image(request, id):

@@ -20,32 +20,19 @@
     <div class="images">
       <p>Images</p>
       <div class="image">
-        {% for x in image %}
-        <div class="col-lg-4 col-md-4 col-12">
+    <div class="col-lg-4 col-md-4 col-12">
           <div class="text-center mt-2">
             <img
-              src="{{x.image.url}}"
+              src="{{lf.image.url}}"
               height="70%"
               width="70%"
               class="img-thumbnail"
               alt="..."
             />
-            <h2 class="text-center">{{x.caption}}</h2>
-          </div><button
-          type="submit"
-          class="btn btn-outline-danger btn-sm"
-        >
-        <a href="{%  url 'delete' x.id %}"
 
-        >
-          Delete image
-        </a></button>
-        </div>
-        {% if forloop.counter|divisibleby:3 %}
-      </div>
-      <div class="row">{% endif %} {% if forloop.last %}</div>
-      {% endif %} {% endfor %}
-
+          </div>
+    </div>
+    </div>
     </div>
   </body>
 </html>
