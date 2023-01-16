@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="{% static 'style2.css'%}" />
+    <link rel="stylesheet" href="{% static 'style2.css' %}" />
   </head>
   <body>
     <h1>Face Aging App</h1>
@@ -21,13 +21,12 @@
       <p>Zdjęcie po symulacji</p>
       <div class="image">
         <div class="text-center mt-2">
-          <img
-            src="{{lf.image.url}} "
-            class="rounded mx-auto d-block"
-            alt="..."
-          />
+          <img src="{{lf.image.url}} " />
         </div>
       </div>
+      <button type="submit" class="btn btn-outline-danger btn-sm">
+        <a href="'{% url 'home' %}'"> Wgraj zdjęcie ponownie</a>
+      </button>
     </div>
   </body>
 </html>
