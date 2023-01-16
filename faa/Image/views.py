@@ -26,7 +26,7 @@ def index(request):
 def image(request):
     if request.method == 'GET':
         latest_file = Image.objects.last()
-        new = make_image_older(str(latest_file.image.path), 3)
+        new = make_image_older(str(latest_file.image.path), 1)
         display_image(new, str(latest_file.image.path))
         latest_file = Image.objects.last()
         return render(request, 'image.html', {'lf': latest_file})
@@ -36,3 +36,6 @@ def delete_image(request, id):
     image = Image.objects.get(pk=id)
     image.delete()
     return redirect('image')
+
+def undo(request):
+    return redirect('index')

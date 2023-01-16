@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('image/', views.image, name='image'),
     path('<int:id>', views.delete_image, name='delete'),
+    path('h/', views.undo, name = 'undo'),
 ]

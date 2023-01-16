@@ -24,9 +24,12 @@
           <img src="{{lf.image.url}} " />
         </div>
       </div>
-      <button type="submit" class="btn btn-outline-danger btn-sm">
-        <a href="'{% url 'home' %}'"> Wgraj zdjęcie ponownie</a>
-      </button>
+      <form method="post">
+        {% csrf_token %} {{form.as_p}}
+        <button type="button" class="btn btn-outline-danger btn-sm">
+          <a href="/upload"> Wgraj zdjęcie ponownie</a>
+        </button>
+      </form>
     </div>
   </body>
 </html>
