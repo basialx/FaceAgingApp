@@ -8,19 +8,21 @@ body {
   font-family: "Times new Roman", serif;
   font-size: 18px;
 }
-.image {
+
+.images {
   margin-top: 15px;
   padding-top: 20px;
-  background-color: #fcfcfc;
-  position: relative;
+  border: 5px #2d2d2d;
+  background-color: #212121;
+  position: center;
+  width: 400px;
+  height: 145px;
+  border-radius: 20px;
+  display: grid;
   text-align: center;
-  font-size: 11px;
-  place-items: center;
-  width: 1000px;
-  height: 1000px;
+  font-size: 14px;
 }
-img
-{
+img {
   position: relative;
 }
 h1 {
