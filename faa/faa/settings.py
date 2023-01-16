@@ -57,7 +57,7 @@ ROOT_URLCONF = 'faa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['Image/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,7 +125,7 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
+STATIC_ROOT =  os.path.join(BASE_DIR, '../Image/static')
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 import os
@@ -175,7 +175,7 @@ ROOT_URLCONF = 'faa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['Image/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -243,6 +243,6 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
+STATIC_ROOT =  os.path.join(BASE_DIR, '../Image/static')
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

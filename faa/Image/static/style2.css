@@ -14,16 +14,13 @@ body {
   padding-top: 20px;
   border: 5px #2d2d2d;
   background-color: #212121;
-  position: center;
+  position: relative;
   width: 400px;
   height: 145px;
   border-radius: 20px;
   display: grid;
   text-align: center;
   font-size: 14px;
-}
-img {
-  position: relative;
 }
 h1 {
   text-align: center;
@@ -32,5 +29,5 @@ h1 {
 
 p {
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
 }

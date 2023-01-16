@@ -17,26 +17,25 @@ def index(request):
         form = ImageForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-        return redirect('images')
+        return redirect('image')
     else:
         form = ImageForm()
     return render(request, "index.html", {"form": form})
 
 
-def images(request):
+def image(request):
     if request.method == 'GET':
         latest_file = Image.objects.last()
-        new = make_image_older(str(latest_file.image.path), 3)
+        new = make_image_older(str(latest_file.image.path), 1)
         display_image(new, str(latest_file.image.path))
         latest_file = Image.objects.last()
-        image = Image.objects.all()
-        return render(request, 'image.html', {'image': image, 'lf': latest_file})
+        return render(request, 'image.html', {'lf': latest_file})
 
-
+#usuwanie zdjecia - to mozna dodac do galerii
 def delete_image(request, id):
     image = Image.objects.get(pk=id)
     image.delete()
-    return redirect('images')
+    return redirect('image')
 
-#def redirect_to_index(request):
-#    return redirect('index')
+def undo(request):
+    return redirect('index')
