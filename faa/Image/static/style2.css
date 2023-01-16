@@ -1,0 +1,34 @@
+body {
+  background-color: #181818;
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  place-items: center;
+  color: #cddaea;
+  font-family: "Times new Roman", serif;
+  font-size: 18px;
+}
+.image {
+  margin-top: 15px;
+  padding-top: 20px;
+  background-color: #fcfcfc;
+  position: relative;
+  text-align: center;
+  font-size: 11px;
+  place-items: center;
+  width: 1000px;
+  height: 1000px;
+}
+img
+{
+  position: relative;
+}
+h1 {
+  text-align: center;
+  font-size: 37px;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+}
