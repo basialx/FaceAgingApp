@@ -37,3 +37,6 @@ def delete_image(request, id):
     image = Image.objects.get(pk=id)
     image.delete()
     return redirect('images')
+
+#def redirect_to_index(request):
+#    return redirect('index')
