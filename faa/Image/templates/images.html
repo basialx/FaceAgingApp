@@ -18,9 +18,9 @@
   <body>
     <h1>Face Aging App</h1>
     <div class="images">
-      <p1>Images</p1>
+      <p>Images</p>
       <div class="image">
-          <p2>Wgrane zdjęcie:</p2>
+          <h2>Wgrane zdjęcie:</h2>
           <div class="text-center mt-2">
             <img
               src="{{before.image.url}}"
@@ -29,22 +29,25 @@
               class="img-thumbnail"
               alt="..."
             />
+          </div>
               <br>
         <div class="col-lg-4 col-md-4 col-12">
-            <div class="col-sm">
-            <p2>20 lat później:</p2>
+           <div class="image">
+               <div class="col-sm">
+            <h2>20 lat później:</h2>
             <img
               src="{{first.image.url}}"
 
-            /></div><div class="col-sm">
-              <p2>40 lat później:</p2>
+            /></div></div>
+            <div class="col-sm">
+              <h2>40 lat później:</h2>
             <img
               src="{{second.image.url}}"
-            /></div><div class="col-sm">
-                  <p2>60 lat później:</p2>
+            /></div></div><div class="col-sm">
+                  <h2>60 lat później:</h2>
             <img
               src="{{third.image.url}}"
-            /></div>
+            /></div></div>
           </div>
 
         </div>
@@ -54,7 +57,6 @@
         <button type="button" class="btn btn-outline-danger btn-sm">
           <a href="../"> Wgraj zdjęcie ponownie</a>
         </button>
-      </form>
-    </div>
+      </form></div>
   </body>
 </html>
