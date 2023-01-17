@@ -1,7 +1,9 @@
 Dla uruchomienia strony do wywołania w terminalu:
+
 Instalacja django
 1. py manage.py migrate
 2. py manage.py runserver
+
 
 
 Wymagane biblioteki i ich wersje
