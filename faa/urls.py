@@ -22,7 +22,6 @@ from Image.views import images
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Image.urls")),
-    path('images/', include("Image.urls")),
 ]
 
 if settings.DEBUG:
