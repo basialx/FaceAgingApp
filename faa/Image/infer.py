@@ -13,7 +13,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 @torch.no_grad()
 
-def make_image_older(image, n): # gdzies do 35 linii
+def make_image_older(image): # gdzies do 35 linii
     model = Generator(ngf=32, n_residual_blocks=9)
     ckpt = torch.load('Image/pretrained_model/state_dict.pth', map_location='cpu')
     model.load_state_dict(ckpt)
@@ -33,17 +33,24 @@ def make_image_older(image, n): # gdzies do 35 linii
 
     aged_face1 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
     plt.imshow(aged_face1)
-    plt.savefig("/Applications/XAMPP/xamppfiles/htdocs/php1/galeria_po/20lat")
+    plt.savefig('path')
     aged_face = model(aged_face)
     aged_face2 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
     plt.imshow(aged_face2)
-    plt.savefig("/Applications/XAMPP/xamppfiles/htdocs/php1/galeria_po/40lat")
+    plt.savefig('path')
     aged_face = model(aged_face)
     aged_face3 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
     plt.imshow(aged_face3)
-    plt.savefig("/Applications/XAMPP/xamppfiles/htdocs/php1/galeria_po/60lat")
+    plt.savefig('path')
 
     return aged_face
 
+def display_image(image, path):
+    plt.imshow(image)
+    plt.savefig(path)
+
+
 if __name__ == '__main__':
-    pass
+    img = Image.open("adriana.jpg")
+
+    img = make_image_older(img)
