@@ -2,13 +2,12 @@ import glob
 import os
 
 from django.shortcuts import render, redirect
-
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
 from .form import ImageForm
 from .models import Image
 from django.http import HttpResponse
@@ -46,8 +45,6 @@ def delete_image(request, id):
     image.delete()
     return redirect('image')
 
-
-======
 
 def registerPage(request):
     form = UserCreationForm()
