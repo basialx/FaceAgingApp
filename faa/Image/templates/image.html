@@ -23,11 +23,12 @@
         <div class="text-center mt-2">
           <img src="{{lf.image.url}} " />
         </div>
+        <a href="{{lf.image.url}} download">Download </a>
       </div>
       <form method="post">
         {% csrf_token %} {{form.as_p}}
         <button type="button" class="btn btn-outline-danger btn-sm">
-          <a href="/upload"> Wgraj zdjęcie ponownie</a>
+          <a href=""> Wgraj zdjęcie ponownie</a>
         </button>
       </form>
     </div>
