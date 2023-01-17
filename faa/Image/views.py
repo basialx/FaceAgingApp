@@ -13,7 +13,7 @@ from .form import ImageForm
 from .models import Image
 from django.http import HttpResponse
 from .form import *
-from .infer import make_image_older, display_image
+from .infer import make_image_older
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 
@@ -34,8 +34,7 @@ def index(request):
 def image(request):
     if request.method == 'GET':
         latest_file = Image.objects.last()
-        new1 = make_image_older(str(latest_file.image.path), 1)
-        display_image(new1, str(latest_file.image.path))
+        new = make_image_older(str(latest_file.image.path), str(latest_file.image.path))
         latest_file = Image.objects.all()
         return render(request, 'image.html', {'lf': latest_file})
 
