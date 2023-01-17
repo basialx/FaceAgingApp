@@ -6,4 +6,7 @@ urlpatterns = [
     path('image/', views.image, name='image'),
     path('<int:id>', views.delete_image, name='delete'),
     path('h/', views.undo, name = 'undo'),
+    path('register/', views.registerPage, name='register'),
+    path('login/', views.loginPage, name="login"),
+    path('logiout/', views.loginPage, name="logiout"),
 ]
