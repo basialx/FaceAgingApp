@@ -1,8 +1,9 @@
 Dla uruchomienia strony do wywołania w terminalu:
-1.pip install django
-2.pip install Pillow
-3.py manage.py migrate
-4.py manage.py runserver
+
+Instalacja django
+1. py manage.py migrate
+2. py manage.py runserver
+
 
 
 Wymagane biblioteki i ich wersje

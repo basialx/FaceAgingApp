@@ -13,9 +13,9 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 @torch.no_grad()
 
-def make_image_older(image, n): # gdzies do 35 linii
+def make_image_older(image): # gdzies do 35 linii
     model = Generator(ngf=32, n_residual_blocks=9)
-    ckpt = torch.load('C:/Users/patkr/faa/Image/state_dict.pth', map_location='cpu')
+    ckpt = torch.load('Image/pretrained_model/state_dict.pth', map_location='cpu')
     model.load_state_dict(ckpt)
     model.eval()
     transTensor = transforms.Compose([
@@ -27,9 +27,21 @@ def make_image_older(image, n): # gdzies do 35 linii
     img = i.convert('RGB')
     img = transTensor(img).unsqueeze(0)
     aged_face = model(img)
-    for i in range(n-1):
-        aged_face = model(aged_face)
-    aged_face = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
+    aged_face1 = model(img)
+    aged_face2 = model(img)
+    aged_face3 = model(img)
+
+    aged_face1 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
+    plt.imshow(aged_face1)
+    plt.savefig('path')
+    aged_face = model(aged_face)
+    aged_face2 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
+    plt.imshow(aged_face2)
+    plt.savefig('path')
+    aged_face = model(aged_face)
+    aged_face3 = (aged_face.squeeze().permute(1, 2, 0).detach().numpy() + 1.0) / 2.0
+    plt.imshow(aged_face3)
+    plt.savefig('path')
 
     return aged_face
 
@@ -39,6 +51,6 @@ def display_image(image, path):
 
 
 if __name__ == '__main__':
-    img = Image.open("zdj/alan.jpg")
+    img = Image.open("adriana.jpg")
 
-    img = make_image_older(img, 3)
+    img = make_image_older(img)

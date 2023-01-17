@@ -1,7 +1,3 @@
 # FaceAgingApp
 
-terminal:
-- pip install django
-- pip install Pillow
-- py manage.py migrate
-- py manage.py runserver
+Strona internetowa wykonująca symulację starzenia się twarzy.

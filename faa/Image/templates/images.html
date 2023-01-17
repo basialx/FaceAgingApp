@@ -13,14 +13,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="{% static 'style2.css'%}" />
+    <link rel="stylesheet" href="{% static 'style2.css' %}" />
   </head>
   <body>
     <h1>Face Aging App</h1>
     <div class="images">
       <p>Images</p>
       <div class="image">
-        {% for x in image %}
+        {% for x in lf %}
         <div class="col-lg-4 col-md-4 col-12">
           <div class="text-center mt-2">
             <img
@@ -30,7 +30,6 @@
               class="img-thumbnail"
               alt="..."
             />
-            <h2 class="text-center">{{x.caption}}</h2>
           </div><button
           type="submit"
           class="btn btn-outline-danger btn-sm"
@@ -46,6 +45,12 @@
       <div class="row">{% endif %} {% if forloop.last %}</div>
       {% endif %} {% endfor %}
 
+      <form method="post">
+        {% csrf_token %} {{form.as_p}}
+        <button type="button" class="btn btn-outline-danger btn-sm">
+          <a href=""> Wgraj zdjęcie ponownie</a>
+        </button>
+      </form>
     </div>
   </body>
 </html>
