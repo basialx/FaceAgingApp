@@ -1,6 +1,6 @@
 import glob
 import os
-
+from django.core.files.images import ImageFile
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -23,7 +23,6 @@ def index(request):
         form = ImageForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-            #zapytanie o ile lat?
         return redirect('image')
     else:
         form = ImageForm()
@@ -34,9 +33,22 @@ def image(request):
     if request.method == 'GET':
         latest_file = Image.objects.last()
         new1 = make_image_older(str(latest_file.image.path), 1)
-        display_image(new1, str(latest_file.image.path))
-        latest_file = Image.objects.all()
-        return render(request, 'image.html', {'lf': latest_file})
+        display_image(new1, str(latest_file.image.path), "1")
+        new1 = Image.objects.create(caption="1")
+        new1.image = ImageFile(open(str(latest_file.image.path)+"1.jpg", "rb"))
+        new1.save()
+        new2 = make_image_older(str(latest_file.image.path), 2)
+        display_image(new2, str(latest_file.image.path),"2")
+        new2 = Image.objects.create(caption="2")
+        new2.image = ImageFile(open(str(latest_file.image.path) + "2.jpg", "rb"))
+        new2.save()
+        new3 = make_image_older(str(latest_file.image.path), 3)
+        display_image(new3, str(latest_file.image.path), "3")
+        new3 = Image.objects.create(caption="1")
+        new3.image = ImageFile(open(str(latest_file.image.path) + "3.jpg", "rb"))
+        new3.save()
+        context = { 'first': new1, 'second': new2, 'third': new3, 'before': latest_file}
+        return render(request, 'images.html', context)
 
 #usuwanie zdjecia - to mozna dodac do galerii
 @login_required(login_url='login')

@@ -18,37 +18,41 @@
   <body>
     <h1>Face Aging App</h1>
     <div class="images">
-      <p>Images</p>
+      <p1>Images</p1>
       <div class="image">
-        {% for x in lf %}
-        <div class="col-lg-4 col-md-4 col-12">
+          <p2>Wgrane zdjęcie:</p2>
           <div class="text-center mt-2">
             <img
-              src="{{x.image.url}}"
+              src="{{before.image.url}}"
               height="70%"
               width="70%"
               class="img-thumbnail"
               alt="..."
             />
-          </div><button
-          type="submit"
-          class="btn btn-outline-danger btn-sm"
-        >
-        <a href="{%  url 'delete' x.id %}"
+              <br>
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="col-sm">
+            <p2>20 lat później:</p2>
+            <img
+              src="{{first.image.url}}"
 
-        >
-          Delete image
-        </a></button>
+            /></div><div class="col-sm">
+              <p2>40 lat później:</p2>
+            <img
+              src="{{second.image.url}}"
+            /></div><div class="col-sm">
+                  <p2>60 lat później:</p2>
+            <img
+              src="{{third.image.url}}"
+            /></div>
+          </div>
+
         </div>
-        {% if forloop.counter|divisibleby:3 %}
       </div>
-      <div class="row">{% endif %} {% if forloop.last %}</div>
-      {% endif %} {% endfor %}
-
       <form method="post">
         {% csrf_token %} {{form.as_p}}
         <button type="button" class="btn btn-outline-danger btn-sm">
-          <a href=""> Wgraj zdjęcie ponownie</a>
+          <a href="../"> Wgraj zdjęcie ponownie</a>
         </button>
       </form>
     </div>

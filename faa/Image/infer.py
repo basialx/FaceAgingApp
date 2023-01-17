@@ -33,12 +33,10 @@ def make_image_older(image, n): # gdzies do 35 linii
 
     return aged_face
 
-def display_image(image, path):
+def display_image(image, path, n):
     plt.imshow(image)
-    plt.savefig(path)
+    plt.savefig(path+n+'.jpg')
 
 
 if __name__ == '__main__':
-    img = Image.open("zdj/alan.jpg")
-
-    img = make_image_older(img, 3)
+    pass
