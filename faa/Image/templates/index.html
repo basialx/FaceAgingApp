@@ -10,9 +10,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/style.css">
+
   </head>
-  <body>
+
+
+ <nav class="navbar navbar-light">
+        <a class="navbar-brand">
+    <form class="form-inline">
+    <span id="hello-msg" >Witaj, {{request.user}}</span>
+    <button class="btn btn-outline-success" type="button">
+        <span><a href="{% url 'logout' %}">Wyloguj się</a></span></button>
+  </form></span>
+    </a>
+  </nav>
     <h1>Face Aging App</h1>
+  <h2>Wybierz zdjęcie i załaduj je w okienku poniżej, aby wykonać symulację</h2>
     <div class="container">
       <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %} {{form.as_p}}
