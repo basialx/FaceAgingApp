@@ -9,9 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Aboreto&family=Josefin+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/register.css">
   </head>
 <body>
+	<br></br>
+	<br></br>
+	<br></br>
     <h1>Face Aging App</h1>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -32,9 +35,9 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-								<input type="password" name="password" placeholder=Hasło..." class="form-control" >
+								<input type="password" name="password" placeholder="Hasło..." class="form-control" >
 						</div>
-
+						<br>
 							<div class="d-flex justify-content-center mt-3 login_container">
 				 				<input class="btn login_btn" type="submit" value="Login">
 				   			</div>
@@ -44,6 +47,7 @@
 				{% for message in messages %}
 				<p id="messages">{{message}}</p>
 				{% endfor %}
+				<br>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Nie posiadasz konta? <a href="{% url 'register' %}" class="ml-2">Zarejestruj się</a>

@@ -15,7 +15,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 def make_image_older(image, n): # gdzies do 35 linii
     model = Generator(ngf=32, n_residual_blocks=9)
-    ckpt = torch.load('C:/Users/patkr/faa/Image/state_dict.pth', map_location='cpu')
+    ckpt = torch.load('C:/Users/pauli/faa/faa/Image/state_dict.pth', map_location='cpu')
     model.load_state_dict(ckpt)
     model.eval()
     transTensor = transforms.Compose([
