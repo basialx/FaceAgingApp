@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Josefin+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/style.css">
+
+  </head>
+
+<body>
+  <br></br>
+  <br>
+ <nav class="navbar navbar-light">
+        <a class="navbar-brand">
+    <form class="form-inline">
+    <span id="hello-msg" >Witaj, {{request.user}}</span>
+    <button class="btn btn-outline-success" type="button">
+        <span><a href="{% url 'logout' %}">Wyloguj się</a></span></button>
+  </form></span>
+    </a>
+  </nav>
+    <h1>Face Aging App</h1>
+    <br>
+  <h2>Wybierz zdjęcie i załaduj je w okienku poniżej, aby wykonać symulację</h2>
+    <div class="container">
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{form.as_p}}
+        <button
+          type="submit"
+          class="btn btn-lg btn-success"
+        >
+          Upload
+        </button>
+      </form>
+      </div>
+  </body>
+</html>
