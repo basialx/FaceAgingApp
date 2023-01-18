@@ -10,9 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Aboreto&family=Josefin+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/register.css">
   </head>
 <body>
+	<br></br>
+	<br></br>
+	<br></br>
+<h1>Face Aging App</h1>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -22,26 +26,27 @@
 				<div class="d-flex justify-content-center form_container">
 
 					<form method="POST" action="">
+						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="username">
+							{{form.username}}
 						</div>
 
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="text" name="password1">
+							{{form.password1}}
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="text" name="password2">
+							{{form.password2}}
 						</div>
-
+						<br>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 				 			<input class="btn login_btn" type="submit" value="Zarejestruj się">
 				   		</div>
@@ -50,7 +55,7 @@
 				{{form.errors}}
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Posiadasz konto? <a href="{% url 'login' %}" class="ml-2">Zaloguj się</a>
+						<br>Posiadasz konto? <a href="{% url 'login' %}" class="ml-2">Zaloguj się</a>
 					</div>
 				</div>
 			</div>
@@ -63,10 +68,10 @@
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Enter password...';
-		form_fields[4].placeholder='Re-enter Password...';
+		form_fields[1].placeholder='Podaj nazwę..';
+		form_fields[2].placeholder='Podaj hasło..';
+		form_fields[3].placeholder='Powtórz hasło..';
+
 
 
 		for (var field in form_fields){

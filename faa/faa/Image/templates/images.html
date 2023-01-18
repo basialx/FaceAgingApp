@@ -16,45 +16,56 @@
     <link rel="stylesheet" href="{% static 'style2.css' %}" />
   </head>
   <body>
+<br></br>
+   <span id="hello-msg" >Witaj, {{request.user}}</span>
+   <button class="btn btn-outline-success" type="button">
+      <span><a href="{% url 'logout' %}">Wyloguj się</a></span></button>
+  
+
     <h1>Face Aging App</h1>
     <div class="images">
-      <p1>Images</p1>
-      <div class="image">
-          <p2>Wgrane zdjęcie:</p2>
-          <div class="text-center mt-2">
-            <img
+
+          <h2>Wgrane zdjęcie:</h2>
+            <div class="image">
+                <img
               src="{{before.image.url}}"
               height="70%"
               width="70%"
               class="img-thumbnail"
               alt="..."
-            />
-              <br>
-        <div class="col-lg-4 col-md-4 col-12">
-            <div class="col-sm">
-            <p2>20 lat później:</p2>
-            <img
-              src="{{first.image.url}}"
-
-            /></div><div class="col-sm">
-              <p2>40 lat później:</p2>
-            <img
-              src="{{second.image.url}}"
-            /></div><div class="col-sm">
-                  <p2>60 lat później:</p2>
-            <img
-              src="{{third.image.url}}"
             /></div>
-          </div>
 
-        </div>
-      </div>
-      <form method="post">
-        {% csrf_token %} {{form.as_p}}
-        <button type="button" class="btn btn-outline-danger btn-sm">
-          <a href="../"> Wgraj zdjęcie ponownie</a>
-        </button>
-      </form>
-    </div>
+              <br>
+        <div class="col-lg-4 col-md-4 col-12" >
+<div class="text-center mt-2"><h2 class="text-center" >20 lat później:</h2>
+<img src="{{first.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
+</div>
+
+</div>
+<div class="col-lg-4 col-md-4 col-12" >
+<div class="text-center mt-2"><h2 class="text-center" >40 lat później:</h2>
+<img src="{{second.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
+</div>
+
+</div>
+
+
+        <div class="col-lg-4 col-md-4 col-12" >
+<div class="text-center mt-2"><h2 class="text-center" >60 lat później:</h2>
+<img src="{{third.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
+</div>
+
+</div>
+
+<br>
+<div class="text-center mt-2">
+<form method="post">
+{% csrf_token %} {{form.as_p}}
+<button type="button" class="btn btn-outline-danger btn-sm">
+<a href="../"> Wgraj zdjęcie ponownie</a>
+</button>
+</form></div>
+
+</div>
   </body>
 </html>

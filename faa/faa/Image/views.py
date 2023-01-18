@@ -13,6 +13,7 @@ from .models import Image
 from django.http import HttpResponse
 from .form import *
 from .infer import make_image_older, display_image
+
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 
@@ -73,6 +74,7 @@ def registerPage(request):
     return render(request, 'register.html', context)
 
 def loginPage(request):
+    global username, password
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
