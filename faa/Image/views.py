@@ -87,7 +87,7 @@ def loginPage(request):
         else:
             messages.info(request, ' Niepoprawna nazwa użytkownika lub hasło')
 
-    context = {'username': username, 'passwword': password}
+    context = {}
     return render(request, 'login.html', context)
 
 
