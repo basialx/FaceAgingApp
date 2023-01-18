@@ -6,7 +6,7 @@ body {
   place-items: center;
   color: #cddaea;
   font-family: "Times new Roman", serif;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .images {
@@ -15,8 +15,8 @@ body {
   border: 5px #2d2d2d;
   background-color: #212121;
   position: center;
-  width: 1440px;
-  height: 500px;
+  width: 70%;
+  height: 100%;
   border-radius: 20px;
 }
 .image {
@@ -26,7 +26,7 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 37px;
+  font-size: 100px;
 }
 h2
 {
@@ -60,4 +60,3 @@ button:hover
   text-align: center;
   place-items: center;
 }
-

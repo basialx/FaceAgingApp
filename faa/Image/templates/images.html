@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="{% static 'style2.css' %}" />
   </head>
   <body>
+<br></br>
+   <span id="hello-msg" >Witaj, {{request.user}}</span>
+   <button class="btn btn-outline-success" type="button">
+      <span><a href="{% url 'logout' %}">Wyloguj się</a></span></button>
+  
+
     <h1>Face Aging App</h1>
     <div class="images">
 
@@ -32,13 +38,13 @@
               <br>
         <div class="col-lg-4 col-md-4 col-12" >
 <div class="text-center mt-2"><h2 class="text-center" >20 lat później:</h2>
-<img src="{{first.image.url}}" class="img-thumbnail" alt="...">
+<img src="{{first.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
 </div>
 
 </div>
 <div class="col-lg-4 col-md-4 col-12" >
 <div class="text-center mt-2"><h2 class="text-center" >40 lat później:</h2>
-<img src="{{second.image.url}}" class="img-thumbnail" alt="...">
+<img src="{{second.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
 </div>
 
 </div>
@@ -46,17 +52,20 @@
 
         <div class="col-lg-4 col-md-4 col-12" >
 <div class="text-center mt-2"><h2 class="text-center" >60 lat później:</h2>
-<img src="{{third.image.url}}" class="img-thumbnail" alt="...">
+<img src="{{third.image.url}}" height="50%" width="50%" class="img-thumbnail" alt="...">
 </div>
 
 </div>
-        <br>
-          <div class="text-center mt-2">
-      <form method="post">
-        {% csrf_token %} {{form.as_p}}
-        <button type="button" class="btn btn-outline-danger btn-sm">
-          <a href="../"> Wgraj zdjęcie ponownie</a>
-        </button>
-      </form></div></div>
+
+<br>
+<div class="text-center mt-2">
+<form method="post">
+{% csrf_token %} {{form.as_p}}
+<button type="button" class="btn btn-outline-danger btn-sm">
+<a href="../"> Wgraj zdjęcie ponownie</a>
+</button>
+</form></div>
+
+</div>
   </body>
 </html>
